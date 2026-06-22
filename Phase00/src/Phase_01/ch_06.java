@@ -8,20 +8,23 @@ public class ch_06 {
         int correctPin = 1234;
         int attempts = 0;
         int pin;
+        int maxAttempts = 3;
         System.out.print("Enter the PIN =  ");
         do {
             pin = scanner.nextInt();
             if (pin != correctPin) {
-                System.out.print("Tray agene = ");
+                System.out.println("Try again. Enter the PIN = ");
                 attempts++;
             }
-            if (attempts >= 3) {
-                System.out.println("Card Blocked!");
-            }
 
-        } while (attempts <= 3 && (pin != correctPin));
+        } while (pin != correctPin && attempts < maxAttempts);
 
-        System.out.println("Access Granted!");
+        if (attempts == 3) {
+            System.out.println("Card Blocked!");
+        } else {
+            System.out.println("Access Granted!");
+        }
+        scanner.close();
 
     }
 }
