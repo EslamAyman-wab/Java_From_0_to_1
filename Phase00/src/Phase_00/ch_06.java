@@ -1,4 +1,4 @@
-package Phase_01;
+package Phase_00;
 
 import java.util.Scanner;
 
